@@ -1,0 +1,72 @@
+﻿@model Assignment2.Models.DisplayBlogPostViewModel
+
+
+@{
+    Layout = "_Layout";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title class="text-center">Home</title>
+</head>
+<body>
+
+    <div class="container jumbotron">
+        <div class="jumbotron">
+            <h1 class="display-1 text-center page-header text-uppercase">Tea Blogger</h1>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div class="col-md">
+    @foreach (var item in Model.Blog)
+            {
+        <h2 class="featurette-heading text-center page-header text-uppercase ">@item.Title</h2>
+                <h5><span class="text-muted ">@item.Posted</span></h5>
+                <h5><span class="text-muted">@item.Content</span></h5>
+                <hr class="featurette-divider">
+    }
+
+    @foreach (var item2 in Model.Users)
+            {
+                <h5><span class="text-muted">@item2.FirstName @item2.LastName</span></h5>
+                <h5><span class="text-muted">@item2.EmailAddress</span></h5>
+    }
+
+    @foreach (var items in Model.Comments)
+            {
+                <h5><span class="text-muted">@items.Content</span></h5>
+                <h5><span class="text-muted">@items.Rating</span></h5>
+    }
+    <div class="img-thumbnail col-sm-offset-4">
+    <table>
+        @foreach (var items in Model.Photos)
+        {
+                <tr>
+                    <td style="vertical-align: top">
+                        <img src="@items.Url" style="max-width: 400px;" />
+                        <h5 class="featurette-heading text-center" ><a asp-controller="Home" asp-action="DeletePhoto" asp-route-id="@items.PhotoId">Delete Image</a></h5>
+
+                    </td>
+                </tr>
+                }
+        </table>
+    </div>
+        </div>
+    </div>
+
+    <div class="container marketing">
+        <div class="jumbotron ">
+            <form asp-controller="Home" asp-action="AddComment" class="form-signin">
+                <h2 class="form-signin-heading text-center">Post a comment</h2>
+                <input name="BlogId" type="number" class="form-control" placeholder="BlogId" required autofocus>
+                <input name="Comment"  type="text" class="form-control" placeholder="Comment" required autofocus>
+                <input name="Rating" type="number" class="form-control" placeholder="Rating" required autofocus>
+                <button class="btn btn-lg btn-primary btn-block " type="submit" value="EditBlog">Post</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

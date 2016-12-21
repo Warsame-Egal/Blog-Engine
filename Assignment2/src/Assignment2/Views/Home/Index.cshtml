@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Assignment2.Models.BlogPost>
+
+@{
+    Layout = "_Layout";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+</head>
+<body>
+
+    <div class="container jumbotron">
+        <div class="jumbotron">
+            <h1 class="display-1 text-center page-header text-uppercase">Tea Blogger</h1>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div class="col-md">
+            @if (Model == null || Model.Count() == 0)
+            {
+                <h4>Currently, there are no movies to display.</h4>
+            }
+
+            else
+            {
+                @foreach (var item in Model)
+                {
+                    <h2 class="featurette-heading"><a asp-controller="Home" asp-action="DisplayFullBlogPost" asp-route-id="@item.BlogPostId">@item.Title</a></h2>
+                    <h5 class="featurette-heading"><a href="@Url.Action("EditBlogPost", "Home")">Edit Blog</a></h5>
+                    <h5><span class="text-muted">@item.Posted</span></h5>
+                    <p class="lead">@item.ShortDescription</p>
+                    <h5 class="featurette-heading"><a asp-controller="Home" asp-action="DeleteBlog" asp-route-id="@item.BlogPostId">Delete Blog</a></h5>
+                    <hr class="featurette-divider">
+                }
+            }
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <a asp-controller="Home" asp-action="Logout">Logout</a>
+</body>
+
+</html>

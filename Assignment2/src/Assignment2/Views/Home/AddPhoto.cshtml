@@ -1,0 +1,22 @@
+﻿@model Assignment2.Models.Photo
+
+@{
+    Layout = "_Layout";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title class="text-center">Add Blog</title>
+</head>
+<body>
+    <div class="container marketing">
+        <div class="jumbotron">
+            <form asp-controller="Home" asp-action="UploadFileNow" enctype="multipart/form-data">
+                <input type="file" name="files" />
+                <button name="upload">Upload Now</button>
+            </form>
+            </div>
+        </div>
+</body>
+</html>

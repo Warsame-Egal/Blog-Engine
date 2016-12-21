@@ -1,0 +1,36 @@
+﻿@model Assignment2.Models.User
+
+
+@{
+    Layout = "_Layout";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title class="text-center">Log in</title>
+</head>
+<body>
+    <hr />
+    <form asp-controller="Home" asp-action="LoginUser" class="form-signin">
+        <h2 class="form-signin-heading">Please Sign In</h2>
+        <input asp-for="EmailAddress" id="EmailAddress" class="form-control" placeholder="Email Address" required autofocus>
+        <input asp-for="Password" id="Password" class="form-control" placeholder="Password" required autofocus>
+        <div class="checkbox glyphicon glyphicon-log-in">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login">Log in</button>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

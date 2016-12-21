@@ -1,0 +1,47 @@
+﻿@model Assignment2.Models.User
+
+
+
+@{
+    Layout = "_Layout";
+
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title class="text-center">Register</title>
+</head>
+<body>
+    <form asp-controller="Home" asp-action="CreateUser" class="form-signin">
+        <h2 class="form-signin-heading">User Sign Up</h2>
+        <input asp-for="FirstName" id="FirstName" class="form-control" placeholder="First Name" required autofocus>
+        <input asp-for="LastName" id="LastName" class="form-control" placeholder="Last Name" required autofocus>
+        <input asp-for="EmailAddress" id="EmailAddress" class="form-control" placeholder="Email Address" required autofocus>
+        <input asp-for="Password" id="Password" class="form-control" placeholder="Password" required autofocus>
+        
+        <input asp-for="DateOfBirth" id="DateOfBirth" class="form-control" type="datetime-local" placeholder="DateOfBirth" required autofocus>
+        <input asp-for="City" id="City" class="form-control" placeholder="City" required autofocus>
+        <input asp-for="Address" id="Address" class="form-control" placeholder="Address" required autofocus>
+        <input asp-for="PostalCode" id="PostalCode" class="form-control" placeholder="PostalCode" required autofocus>
+        <input asp-for="Country" id="Country" class="form-control" placeholder="Country" required autofocus>
+
+        <input asp-for="RoleId" type="number" id="RoleId" class="form-control" placeholder="RoleId" required autofocus>
+        <button class="btn btn-lg btn-primary btn-block glyphicon glyphicon-registration-mark text-center" type="submit" value="Register"> Sign Up</button>
+    </form>
+
+    <a class="btn btn-lg btn-primary btn-block glyphicon glyphicon-log-in text-center" asp-controller="Home" asp-action="Login"> Login</a>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

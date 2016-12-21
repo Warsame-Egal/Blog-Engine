@@ -1,0 +1,58 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" , initial-scale=1 />
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <!-- Custom styles for this template -->
+        <link href="~/css/StyleSheet.css" rel="stylesheet" />
+    </environment>
+
+    @section Styles {
+    }
+
+</head>
+</a>
+<body>
+    <header>
+        \\
+        <div class="navbar-wrapper">
+            <div class="container">
+                <nav class="navbar navbar-inverse navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand text-center" href="@Url.Action("Index", "Home")">Tea Blogger</a>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="@Url.Action("AddBlogPost", "Home")">AddBlog</a></li>
+                                <li><a href="@Url.Action("EditBlogPost", "Home")">EditBlog</a></li>
+                                <li><a href="@Url.Action("EditProfile", "Home")">EditProfile</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <footer class="footer panel-footer">
+        <div class="container text-center" >
+           <h3> &copy; 2016 - Warsame Egal 040693092</h3>
+            </div>
+    </footer>
+</body>
+</html>

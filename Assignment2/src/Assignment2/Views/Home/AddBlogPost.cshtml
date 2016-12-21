@@ -1,0 +1,28 @@
+﻿@model Assignment2.Models.BlogPost
+
+@{
+    Layout = "_Layout";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title class="text-center">Add Blog</title>
+</head>
+<body>
+
+    <div class="container marketing">
+        <div class="jumbotron">
+            <form asp-controller="Home" asp-action="CreateBlog" class="form-signin">
+                <h2 class="form-signin-heading text-center">Post a blog</h2>
+                <input asp-for="Title" id="Title" class="form-control" placeholder="Title" required autofocus>
+                <input asp-for="ShortDescription" id="ShortDescription" class="form-control" placeholder="ShortDescription" required autofocus>
+                <textarea asp-for="Content" id="Content" class="form-control" rows="20" cols="20" placeholder="Content" required autofocus></textarea>
+                <input asp-for="Posted" id="Posted" class="form-control" type="datetime-local" placeholder="Posted" required autofocus">
+                <input asp-for="IsAvailable" id="IsAvailable" type="checkbox" value="IsAvailable" />
+                <button class="btn btn-lg btn-primary btn-block" type="submit" value="AddBlogPost">Create</button>
+            </form>
+        </div>
+    </div><!-- /.container -->
+</body>
+</html>

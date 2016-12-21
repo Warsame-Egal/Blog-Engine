@@ -1,0 +1,38 @@
+﻿@model Assignment2.Models.User
+
+@{
+    Layout = "_Layout";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title class="text-center">Home</title>
+</head>
+<body>
+
+    <div class="container marketing">
+        <div class="jumbotron">
+            <form asp-controller="Home" asp-action="EditUser" asp-route-id="UserId" class="form-signin">
+                <h2 class="form-signin-heading text-center">Update Profile</h2>
+                <input asp-for="UserId" id="UserId" asp-route-id="UserId" class="form-control" placeholder="UserId" required autofocus>
+                <input asp-for="FirstName" id="FirstName" class="form-control" placeholder="FirstName" required autofocus>
+                <input asp-for="LastName" id="LastName" class="form-control" placeholder="LastName" required autofocus>
+                <input asp-for="EmailAddress" id="EmailAddress" class="form-control" placeholder="EmailAddress" required autofocus>
+                <input asp-for="Password" id="Password" asp-route-id="Password" class="form-control" placeholder="Password" required autofocus>
+                <input asp-for="DateOfBirth" id="DateOfBirth" class="form-control" type="datetime-local" placeholder="DateOfBirth" required autofocus">
+                <input asp-for="City" id="City" asp-route-id="City" class="form-control" placeholder="City" required autofocus>
+                <input asp-for="Address" id="Address" class="form-control" placeholder="Address" required autofocus>
+                <input asp-for="PostalCode" id="PostalCode" class="form-control" placeholder="PostalCode" required autofocus>                
+                <input asp-for="Country" id="Country" class="form-control" placeholder="Country" required autofocus>
+                <input asp-for="RoleId" type="number" id="RoleId" class="form-control" placeholder="RoleId" required autofocus>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" value="EditUser">Update</button>
+            </form>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+</body>
+
+</html>
